@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Think again 😭</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+<audio id="bg-audio" autoplay loop>
+    <source src="images/valentine-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const savedTime = localStorage.getItem('valentineAudioTime');
+    if (savedTime) { audio.currentTime = savedTime; }
+    audio.play();
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('valentineAudioTime', audio.currentTime);
+    });
+  </script>
+
+<div class="meme-container">
+<img src="images/val 2.jpeg" alt="Funny meme" class="meme">
+</div>
+ 
+
+<div class="card">
+ <h1>Think Wisely- Valentine no dey market o 😭</h1>
+  <p>Do you really want to say no again? 🥺</p>
+
+  <div class="buttons">
+    <a href="yes.html" class="btn yes">Okay fine, YES 💖</a>
+    <a href="no 3.html" class="btn no">No 💔</a>
+     <a href="javascript:history.back()" class="btn go-back">Previous ⬅️</a>
+  </div>
+</div>
+</body>
+</html>

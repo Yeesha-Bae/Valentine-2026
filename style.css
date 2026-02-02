@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  font-family: "Comic Sans MS", "Bradley Hand", "Segoe Script", cursive;
+}
+
+h1 {
+  font-family: "Comic Sans MS", "Apple Chancery", cursive;
+}
+p {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  font-family: "Comic Sans MS", "Bradley Hand", cursive;
+}
+
+body.center {
+  height: 100vh;
+  background: #ffe6ee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body.center {
+  background-image: url('images/val%20bg.jpg'); /* escape the space */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  background: #ff5c8a;
+  color: rgb(7, 7, 7);
+  font-weight: bold;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background-color: #88ff84; /* lighter pink for hover */
+  cursor: pointer;
+}
+
+.no {
+  background: #999;
+}
+.no:hover {
+  background-color: #ff0000; /* bright red for No button */
+  transform: scale(1.05);
+  cursor: pointer;
+}
+video {
+  border: 5px solid #ff5c8a;  /* pink border */
+  border-radius: 15px;         /* rounded corners */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* subtle shadow */
+  max-width: 90%;              /* responsive width */
+  height: auto;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: rgba(255, 230, 238, 0.8); /* soft pink semi-transparent */
+  border: 5px solid #ff5c8a;                  /* pink border */
+  border-radius: 50px;                        /* oval shape */
+  padding: 2rem 3rem;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);    /* subtle shadow */
+  max-width: 700px;                           /* keeps it neat on big screens */
+  width: 90%;                                 /* responsive */
+  margin: 2rem auto;
+}
+
+.firework {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, #ff5c8a, #ffb6c1, #fff);
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 
+    68% 57%, 79% 91%, 50% 70%, 
+    21% 91%, 32% 57%, 2% 35%, 
+    39% 35%
+  ); /* heart shape */
+  animation: explode 1.5s ease-out forwards;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.5) translateY(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2.5) translateY(-60px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(0.1) translateY(-120px);
+    opacity: 0;
+  }
+}
+.meme-container {
+  margin-bottom: 1rem; /* space between meme and card */
+  text-align: center;
+}
+
+.meme {
+  max-width: 50%;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.meme:hover {
+  transform: scale(1.05);
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YAY 💖</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+<audio id="bg-audio" autoplay loop>
+    <source src="images/valentine-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const savedTime = localStorage.getItem('valentineAudioTime');
+    if (savedTime) { audio.currentTime = savedTime; }
+    audio.play();
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('valentineAudioTime', audio.currentTime);
+    });
+  </script>
+
+<div class="meme-container">
+  <img src="images/val 5.jpeg" alt="Funny meme" class="meme">
+</div>
+
+<div class="card">
+  <h1>Yay W's in the chatt 🥹💖</h1>
+  <p>Actually You for talk No-if e sure for you 💐</p>
+ <a href="javascript:history.back()" class="btn go-back">Previous ⬅️</a>
+</div>
+
+<div id="fireworks"></div>
+
+<script>
+ function createFirework(x, y) {
+  const fw = document.createElement('div');
+  fw.classList.add('firework');
+  fw.style.left = x + 'px';
+  fw.style.top = y + 'px';
+  document.body.appendChild(fw);
+  setTimeout(() => fw.remove(), 1500);
+}
+
+function launchFireworks() {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+  for (let i = 0; i < 15; i++) {
+    const x = Math.random() * width;
+    const y = Math.random() * height / 2;
+    setTimeout(() => createFirework(x, y), i * 300);
+  }
+}
+
+// Continuous fireworks every 2 seconds
+setInterval(launchFireworks, 2000);
+
+// Launch some immediately on page load
+window.addEventListener('load', () => launchFireworks());
+    </script>
+</body>
+</html>

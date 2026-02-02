@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+
+  <!-- Background audio (starts on click) -->
+  <audio id="bg-audio" loop>
+    <source src="images/valentine-song.mp3" type="audio/mpeg">
+  </audio>
+<p>At last The chosen ONE</p>
+  <div class="card" id="landing-card">
+    <!-- First click button -->
+    <button id="start-btn" class="btn start-btn">Click Here to Start 💖</button>
+
+    <!-- Hidden content that shows after click -->
+    <div id="landing-content" style="display:none;">
+      <video width="640" height="360" controls loop>
+        <source src="images/valentine-video.mov" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <h1>Okonofiaaa My own 💖</h1>
+      <p>You know I love a good challenge</p>
+      <a href="valentine.html" class="btn">Challenge accepted 💌</a>
+    </div>
+  </div>
+
+  <!-- JavaScript for click-to-start -->
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const startBtn = document.getElementById('start-btn');
+    const landingContent = document.getElementById('landing-content');
+
+    startBtn.addEventListener('click', () => {
+      audio.play();                     // Start music on click
+      startBtn.style.display = 'none';  // Hide start button
+      landingContent.style.display = 'block'; // Show content
+      landingContent.style.animation = 'fadeIn 1s ease forwards'; // Fade-in animation
+    });
+  </script>
+
+</body>
+</html>

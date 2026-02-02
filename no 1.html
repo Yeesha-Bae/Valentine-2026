@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Are you sure? 🥺</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="center">
+    <audio id="bg-audio" autoplay loop>
+    <source src="images/valentine-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-audio');
+    const savedTime = localStorage.getItem('valentineAudioTime');
+    if (savedTime) { audio.currentTime = savedTime; }
+    audio.play();
+    window.addEventListener('beforeunload', () => {
+      localStorage.setItem('valentineAudioTime', audio.currentTime);
+    });
+  </script>
+  
+  <div class="meme-container">
+  <img src="images/val%201.jpeg" alt="Funny meme" class="meme">
+</div>
+
+<div class="card">
+  <h1>Baby Girl come on! Let's have it Let's have it🥺</h1>
+
+  <div class="buttons">
+    <a href="yes.html" class="btn yes">Yes 💖</a>
+    <a href="no 2.html" class="btn no">No 💔</a>
+     <a href="javascript:history.back()" class="btn go-back">Previous ⬅️</a>
+  </div>
+</div>
+
+</body>
+</html>
