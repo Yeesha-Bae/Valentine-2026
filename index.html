@@ -25,7 +25,7 @@
 
       <h1>Okonofiaaa My own 💖</h1>
       <p>You know I love a good challenge</p>
-      <a href="valentine.html" class="btn">Challenge accepted 💌</a>
+      <button id="challenge-btn" class="btn">Challenge accepted 💌</button>
     </div>
   </div>
 
@@ -41,6 +41,13 @@
       landingContent.style.display = 'block'; // Show content
       landingContent.style.animation = 'fadeIn 1s ease forwards'; // Fade-in animation
     });
+const challengeBtn = document.getElementById('challenge-btn');
+
+challengeBtn.addEventListener('click', () => {
+  localStorage.setItem('valentineAudioTime', audio.currentTime);
+  window.location.href = 'valentine.html';
+});
+    
   </script>
 
 </body>
